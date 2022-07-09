@@ -2,7 +2,7 @@
 title: OpenStack on AArch64/ARM64 via Kolla-Ansible
 date: 2018-10-14T08:10:14+00:00
 #featured: true # Sets if post is a featured post, making appear on the home page side bar.
-#draft: true # Sets whether to render this page. Draft of true will not be rendered.
+draft: false # Sets whether to render this page. Draft of true will not be rendered.
 #toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
 #usePageBundles: true # Set to true to group assets like images in the same folder as this post.
