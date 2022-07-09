@@ -1,9 +1,10 @@
-+++
-title = "About"
-description = "about Date Huang"
-date = "2022-07-09"
-aliases = ["about-us", "contact"]
-author = "Date Huang"
-+++
+---
+title: "About Date Huang"
+date: 2022-07-09
+draft: false
+description: "About Date Huang"
 
-Date Huang, a software engineer
+lightgallery: true
+---
+
+Just a software engineer

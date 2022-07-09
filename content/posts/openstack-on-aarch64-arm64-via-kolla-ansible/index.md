@@ -1,34 +1,68 @@
 ---
-title: OpenStack on AArch64/ARM64 via Kolla-Ansible
-date: 2018-10-14T08:10:14+00:00
-#featured: true # Sets if post is a featured post, making appear on the home page side bar.
-draft: false # Sets whether to render this page. Draft of true will not be rendered.
-toc: true # Controls if a table of contents should be generated for first-level links automatically.
-# menu: main
-#usePageBundles: true # Set to true to group assets like images in the same folder as this post.
-#featureImage: "/images/path/file.jpg" # Sets featured image on blog post.
-#featureImageAlt: 'Description of image' # Alternative text for featured image.
-#featureImageCap: 'This is the featured image.' # Caption (optional).
-#thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
-#shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
-codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
-codeLineNumbers: false # Override global value for showing of line numbers within code block.
-figurePositionShow: true # Override global value for showing the figure label.
-#categories:
-#  - Technology
-#tags:
-#  - Tag_name1
-#  - Tag_name2
-# comment: false # Disable comment if false.
-categories:
-  - OpenStack
----
+title: "Openstack on AArch64/Arm64 via Kolla Ansible"
+subtitle: ""
+date:  2018-10-14T08:10:14+00:00
+lastmod: 2022-07-09T22:46:42+08:00
+draft: false
+author: "Date Huang"
+authorLink: ""
+description: ""
+license: ""
+images: []
 
-# Openstack on arm64 via kolla-ansible
+tags: ["openstack", "arm64", "aarch64"]
+categories: ["openstack"]
+
+featuredImage: ""
+featuredImagePreview: ""
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+twemoji: false
+lightgallery: true
+ruby: true
+fraction: true
+fontawesome: true
+linkToMarkdown: true
+rssFullText: false
+
+toc:
+  enable: true
+  auto: false
+code:
+  copy: true
+  maxShownLines: 50
+math:
+  enable: false
+  # ...
+mapbox:
+  # ...
+share:
+  enable: true
+  # ...
+comment:
+  enable: true
+  # ...
+library:
+  css:
+    # someCSS = "some.css"
+    # located in "assets/"
+    # Or
+    # someCSS = "https://cdn.example.com/some.css"
+  js:
+    # someJS = "some.js"
+    # located in "assets/"
+    # Or
+    # someJS = "https://cdn.example.com/some.js"
+seo:
+  images: []
+  # ...
+---
 
 OpenStack on AArch64/ARM64 已經可以透過 Kolla-Ansible 直接部署，一般在 x86_64 部署 OpenStack 可以參考 [Gene Kuo 的部落格文章][1] ，我這邊就不再贅述。
 
 這篇主要說明如何在 x86_64 與 Arm64 混合雲的情況下，透過 Kolla-Ansible 直接部署 OpenStack Rocky 並且可以正常使用。
+<!--more-->
 
 ## 基礎架構
 
@@ -219,4 +253,4 @@ sudo update-initramfs -u
 
 \[1\] [透過 Kolla-Ansible 跟 Container 部署 OpenStack][1]
 
- [1]: https://igene.tw/kolla-ansible-deploy
+[1]: https://igene.tw/kolla-ansible-deploy

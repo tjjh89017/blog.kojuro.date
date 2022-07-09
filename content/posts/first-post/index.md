@@ -1,17 +1,17 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "First Post"
 subtitle: ""
-date: {{ .Date }}
-lastmod: {{ .Date }}
-draft: true
-author: ""
+date: 2022-07-09T22:31:25+08:00
+lastmod: 2022-07-09T22:31:25+08:00
+draft: false
+author: "Date Huang"
 authorLink: ""
 description: ""
 license: ""
 images: []
 
-tags: []
-categories: []
+tags: ["life"]
+categories: ["life"]
 
 featuredImage: ""
 featuredImagePreview: ""
@@ -28,7 +28,7 @@ rssFullText: false
 
 toc:
   enable: true
-  auto: false
+  auto: true
 code:
   copy: true
   maxShownLines: 50
@@ -59,4 +59,4 @@ seo:
   # ...
 ---
 
-<!--more-->
+總之是個值得紀念的第一個文章
