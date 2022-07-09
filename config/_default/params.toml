@@ -25,7 +25,7 @@ numberOfTagsShown = 14 # Applies for all other default & custom taxonomies. e.g 
 # This can be overridden at the page level; what is set below acts as the default if no page variable is set.
 # Details on page bundles: https://gohugo.io/content-management/page-bundles/#leaf-bundles
 #usePageBundles = false
-usePageBundles = false
+usePageBundles = true
 
 # Path variables
 #
