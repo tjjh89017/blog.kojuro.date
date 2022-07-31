@@ -81,7 +81,25 @@ Configuration=3
 
 `/lib/udev/usb_modeswitch` 中會一直觸發到 `systemctl restart usb-modeswitch@XXX.service` ，所以 ME909s 被設定到一半就被中斷，第二次設定可能依然失敗，進而觸發第三次設定。
 
-## Fix
+## Fix (updated in 2022/07/31)
+
+把 `/lib/udev/rules.d/40-usb_modeswitch.rules` 中的
+
+```
+SUBSYSTEM!="usb", ACTION!="add",, GOTO="modeswitch_rules_end"
+```
+
+修改成
+
+```
+SUBSYSTEM!="usb", GOTO="modeswitch_rules_end"
+ACTION!="add", GOTO="modeswitch_rules_end"
+```
+
+順便發了個 patch 上 upstream 了，希望會收進去
+[https://www.draisberghof.de/usb_modeswitch/bb/viewtopic.php?f=2&t=3034](https://www.draisberghof.de/usb_modeswitch/bb/viewtopic.php?f=2&t=3034)
+
+## Fix (old)
 
 把 `/lib/udev/rules.d/40-usb_modeswitch.rules` 中的
 
@@ -96,3 +114,5 @@ ATTR{idVendor}=="12d1", ATTR{idProduct}=="15c1", RUN+="usb_modeswitch '/%k'"
 # Huawei ME906, ME909 (MBIM, dummy config)
 ACTION=="add", ATTR{idVendor}=="12d1", ATTR{idProduct}=="15c1", RUN+="usb_modeswitch '/%k'"
 ```
+
+
