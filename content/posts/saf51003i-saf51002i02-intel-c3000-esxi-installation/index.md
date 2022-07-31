@@ -96,7 +96,7 @@ IntelRCSetup >North Bridge Chipset Configuration >Memory config DFX Menu > MMIO 
 而 `IO=2F8H,IRQ=3` 則是代表 Legacy COM 2 的 IO Port 以及 IRQ ， 所以變成我們直接把 COM1 透過 AMI SIO 的中斷指定，直接偽裝成 OS 中的 COM2 來使用，這樣就能透過原本的 serial console 來做相關的操作了
 
 `Advanced > SIO > Serial 1`
-將 `auto` ，修改成 `IO=2F8H,IRQ=4,5,6,7,8,9,10; DMA`
+將 `auto` ，修改成 `IO=2F8H,IRQ=3,4,5,6,7,8,9,10; DMA`
 
 ## ESXi 進階設定
 
