@@ -8,3 +8,5 @@ lightgallery: true
 ---
 
 Just a software engineer
+
+[Resume is here](./resume_20230407_rev1.pdf)
