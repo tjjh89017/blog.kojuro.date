@@ -4,14 +4,14 @@ subtitle: ""
 date: 2023-08-26T23:27:55+08:00
 lastmod: 2023-08-26T23:27:55+08:00
 draft: false
-author: ""
+author: "Date Huang"
 authorLink: ""
 description: ""
 license: ""
 images: []
 
-tags: []
-categories: []
+tags: ["arm", "arm64", "console", "raspberrypi", "linux"]
+categories: ["linux", "arm", "arm64"]
 
 featuredImage: ""
 featuredImagePreview: ""
