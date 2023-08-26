@@ -97,8 +97,19 @@ console=ttyAMA0 earlycon=pl011,0xfe201000
 
 rpi4 kernel 預設 `CONFIG_SERIAL_8250_RUNTIME_UARTS` 是 0 ，但是 Debian Kernel 預設是 4，所以在有些情況下需要用 cmdline 設定 `8250.nr_uarts=1` 或是 `8250.nr_uarts=4`
 
+## RPI4 預設 pl011 連接到 bcm43438-bt
+
+rpi4 預設 pl011 直接在 device tree [4] 設定對點是 bcm43438-bt ，所以在 Linux kernel 載入的時候會透過 udev 直接掃描成藍牙裝置，`systemctl` 的結果就會顯示如下：
+
+```
+sys-devices-platform-soc-fe201000.serial-serial0-serial0\x2d0-bluetooth-hci0.device
+...
+sys-subsystem-bluetooth-devices-hci0.device
+```
+
 ## 參考資料
 
 1. rpi4 預設的 dtb [這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/bcm2711-rpi-4-b.dts#L231)
 2. disable-bt.dtbo 可以參照[這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/overlays/disable-bt-overlay.dts)
 3. miniuart-bt.dtbo 可以參照[這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts)
+4. [default bt enable dts](https://github.com/raspberrypi/linux/blob/rpi-6.1.y/arch/arm/boot/dts/bcm283x-rpi-wifi-bt.dtsi#L26)
