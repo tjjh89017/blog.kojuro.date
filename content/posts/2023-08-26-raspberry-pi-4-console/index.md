@@ -93,6 +93,10 @@ console=ttyAMA0 earlycon=pl011,0xfe201000
 console=ttyAMA0 earlycon=pl011,0xfe201000
 ```
 
+## RPI4 uart 8250 額外訊息
+
+rpi4 kernel 預設 `CONFIG_SERIAL_8250_RUNTIME_UARTS` 是 0 ，但是 Debian Kernel 預設是 4，所以在有些情況下需要用 cmdline 設定 `8250.nr_uarts=1` 或是 `8250.nr_uarts=4`
+
 ## 參考資料
 
 1. rpi4 預設的 dtb [這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/bcm2711-rpi-4-b.dts#L231)
