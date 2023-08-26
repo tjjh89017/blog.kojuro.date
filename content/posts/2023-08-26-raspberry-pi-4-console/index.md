@@ -112,4 +112,4 @@ sys-subsystem-bluetooth-devices-hci0.device
 1. rpi4 預設的 dtb [這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/bcm2711-rpi-4-b.dts#L231)
 2. disable-bt.dtbo 可以參照[這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/overlays/disable-bt-overlay.dts)
 3. miniuart-bt.dtbo 可以參照[這裡](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts)
-4. [default bt enable dts](https://github.com/raspberrypi/linux/blob/rpi-6.1.y/arch/arm/boot/dts/bcm283x-rpi-wifi-bt.dtsi#L26)
+4. [default bt enable dts](https://github.com/raspberrypi/linux/blob/655fc658a15ae7a6f37103754adb39ba52a9a14e/arch/arm/boot/dts/bcm283x-rpi-wifi-bt.dtsi#L26)
