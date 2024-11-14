@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Server - 分類 - 伊達's work</title><link>https://blog.kojuro.date/categories/server/</link><description>Server - 分類 - 伊達's work</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Fri, 22 Oct 2021 14:06:31 +0000</lastBuildDate><atom:link href="https://blog.kojuro.date/categories/server/" rel="self" type="application/rss+xml"/><item><title>VMware vSwitch MAC Address Changes, Forged Transmits, Promiscuous Mode Operation</title><link>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</link><pubDate>Fri, 22 Oct 2021 14:06:31 +0000</pubDate><author>Date Huang</author><guid>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</guid><description><![CDATA[<p>VMware 的 vSwitch 中有以下三個選項可以讓你使用</p>
+<ul>
+<li>MAC Address Changes</li>
+<li>Forged Transmits</li>
+<li>Promiscuous Mode Operation</li>
+</ul>
+<p>主要是為了讓 VM 內的流量可以正常出來而需要選擇的，一般來說如果是要做 VM in VM了話，直接將三個一次打開是最簡單的處理方案。</p>
+<p>這邊就依據三個分別去簡單解釋不同意義</p>]]></description></item><item><title>核心數太多導致的 Docker 問題</title><link>https://blog.kojuro.date/2019/03/2019-03-20-too-many-cores-docker-problem/</link><pubDate>Tue, 19 Mar 2019 19:11:00 +0000</pubDate><author>Date Huang</author><guid>https://blog.kojuro.date/2019/03/2019-03-20-too-many-cores-docker-problem/</guid><description>&lt;p>因為之前在使用 ARM Server ，核心數高達 96 ，所以 Golang 的軟體預設就會使用 96 個程序，有時候就會讓 docker 卡卡的，很難使用，問題會超級多。之前使用 Kolla-Ansible 部署 OpenStack 的時候就經常遇到 Gather Facts 卡住，ARM Server 本身必須要重新啟動才會正常的情況。&lt;/p></description></item><item><title>Intel 82599ES 10G 網卡啟用 PXE</title><link>https://blog.kojuro.date/2019/01/2019-01-31-intel-82599es-10g-enable-pxe/</link><pubDate>Thu, 31 Jan 2019 14:47:18 +0000</pubDate><author>Date Huang</author><guid>https://blog.kojuro.date/2019/01/2019-01-31-intel-82599es-10g-enable-pxe/</guid><description><![CDATA[<p>最近在測試 CloneZilla EZIO 模式，想說自己有三台 server 閒置，那就拿來跑看看，結果沒想到有一張網卡沒有辦法 PXE 開機，所以只好研究下怎麼處理了。</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_17 counter-hierarchy counter-decimal ez-toc-grey">
+  <div class="ez-toc-title-container">
+    <p class="ez-toc-title">
+      Table of Contents
+    </p>
+<pre><code>&lt;span class=&quot;ez-toc-title-toggle&quot;&gt;&lt;a class=&quot;ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle&quot; style=&quot;display: none;&quot;&gt;&lt;i class=&quot;ez-toc-glyphicon ez-toc-icon-toggle&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+</code></pre>
+  </div><nav>
+  <ul class="ez-toc-list ez-toc-list-level-1">
+    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+      <a class="ez-toc-link ez-toc-heading-1" href="https://blog.kojuro.date/2019/01/intel-82599es-10g-%e7%b6%b2%e5%8d%a1%e5%95%9f%e7%94%a8-pxe/#%E8%A7%A3%E6%B1%BA%E6%96%B9%E5%BC%8F" title="解決方式">解決方式</a>
+    </li>
+  </ul></nav>
+</div>
+<h2 id="span-classez-toc-section-ide8a7a3e6b1bae696b9e5bc8fspan解決方式span-classez-toc-section-endspan"><span class="ez-toc-section" id="%E8%A7%A3%E6%B1%BA%E6%96%B9%E5%BC%8F"></span>解決方式<span class="ez-toc-section-end"></span></h2>
+<p>先下載 82599ES 的 firmware，應該會得到一個 IBABUILD.exe 的 DOS 執行檔，然後在透過 DOS 執行編譯還有 flash firmware，就可以搞定了。指令有點忘記了，之後想到在補。</p>]]></description></item></channel></rss>
