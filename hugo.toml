@@ -51,10 +51,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 # 作者配置
-[author]
-  name = "Date Huang"
-  email = "tjjh89017@hotmail.com"
-  link = ""
+#[author]
+#  name = "Date Huang"
+#  email = "tjjh89017@hotmail.com"
+#  link = ""
 
 # Menu config
 # 菜单配置
