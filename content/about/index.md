@@ -9,4 +9,4 @@ lightgallery: true
 
 Just a software engineer
 
-[Resume 20241119 is here](./resume_20241119_rev1.pdf)
+[Resume 20241119 is here](./resume_20241119_rev2.pdf)
