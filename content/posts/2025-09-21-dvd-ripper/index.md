@@ -85,4 +85,20 @@ ddrescue -n -b 2048 -N -d -R -r3 -c512 /dev/sr0 output.iso output.log
 ddrescue -n -b 2048 -N -d -r3 -c512 /dev/sr0 output.iso output.log
 ```
 
-3. 基本上這樣你就會得到一個相對可用的`output.iso`，然後你可以導入你其他的DVD Ripper或是直接存起來了。
+3. 或是
+
+```bash
+ddrescue -b 2048 -d -r3 -c1 /dev/sr0 output.iso output.log
+```
+
+4. 基本上這樣你就會得到一個相對可用的`output.iso`，然後你可以導入你其他的DVD Ripper或是直接存起來了。
+
+## 其他
+
+### binwalk
+
+如果沒辦法直接把ISO打開放PotPlayer播放，那就可能要靠binwalk把VOB直接取出來
+
+```bash
+binwalk -e --dd='mpeg' output.iso
+```
