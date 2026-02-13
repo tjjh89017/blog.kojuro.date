@@ -790,7 +790,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  #taxonomyTerm = ["HTML"]
+  taxonomyTerm = ["HTML", "RSS"]
 
 # Multilingual
 # 多语言
