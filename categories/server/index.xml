@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on 伊達's work</title><link>https://blog.kojuro.date/categories/server/</link><description>Recent content in Server on 伊達's work</description><generator>Hugo</generator><language>zh-TW</language><managingEditor>tjjh89017@hotmail.com (Date Huang)</managingEditor><webMaster>tjjh89017@hotmail.com (Date Huang)</webMaster><lastBuildDate>Sat, 09 Jul 2022 23:20:26 +0800</lastBuildDate><atom:link href="https://blog.kojuro.date/categories/server/index.xml" rel="self" type="application/rss+xml"/><item><title>VMware vSwitch MAC Address Changes, Forged Transmits, Promiscuous Mode Operation</title><link>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</link><pubDate>Fri, 22 Oct 2021 14:06:31 +0000</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</guid><description>&lt;p&gt;VMware 的 vSwitch 中有以下三個選項可以讓你使用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MAC Address Changes&lt;/li&gt;
+&lt;li&gt;Forged Transmits&lt;/li&gt;
+&lt;li&gt;Promiscuous Mode Operation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主要是為了讓 VM 內的流量可以正常出來而需要選擇的，一般來說如果是要做 VM in VM了話，直接將三個一次打開是最簡單的處理方案。&lt;/p&gt;
+&lt;p&gt;這邊就依據三個分別去簡單解釋不同意義&lt;/p&gt;</description></item><item><title>核心數太多導致的 Docker 問題</title><link>https://blog.kojuro.date/2019/03/2019-03-20-too-many-cores-docker-problem/</link><pubDate>Tue, 19 Mar 2019 19:11:00 +0000</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2019/03/2019-03-20-too-many-cores-docker-problem/</guid><description>&lt;p&gt;因為之前在使用 ARM Server ，核心數高達 96 ，所以 Golang 的軟體預設就會使用 96 個程序，有時候就會讓 docker 卡卡的，很難使用，問題會超級多。之前使用 Kolla-Ansible 部署 OpenStack 的時候就經常遇到 Gather Facts 卡住，ARM Server 本身必須要重新啟動才會正常的情況。&lt;/p&gt;</description></item><item><title>Intel 82599ES 10G 網卡啟用 PXE</title><link>https://blog.kojuro.date/2019/01/2019-01-31-intel-82599es-10g-enable-pxe/</link><pubDate>Thu, 31 Jan 2019 14:47:18 +0000</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2019/01/2019-01-31-intel-82599es-10g-enable-pxe/</guid><description>&lt;p&gt;最近在測試 CloneZilla EZIO 模式，想說自己有三台 server 閒置，那就拿來跑看看，結果沒想到有一張網卡沒有辦法 PXE 開機，所以只好研究下怎麼處理了。&lt;/p&gt;
+&lt;div id="ez-toc-container" class="ez-toc-v2_0_17 counter-hierarchy counter-decimal ez-toc-grey"&gt;
+ &lt;div class="ez-toc-title-container"&gt;
+ &lt;p class="ez-toc-title"&gt;
+ Table of Contents
+ &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;ez-toc-title-toggle&amp;quot;&amp;gt;&amp;lt;a class=&amp;quot;ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;ez-toc-glyphicon ez-toc-icon-toggle&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/div&gt;&lt;nav&gt;
+ &lt;ul class="ez-toc-list ez-toc-list-level-1"&gt;
+ &lt;li class="ez-toc-page-1 ez-toc-heading-level-2"&gt;
+ &lt;a class="ez-toc-link ez-toc-heading-1" href="https://blog.kojuro.date/2019/01/intel-82599es-10g-%e7%b6%b2%e5%8d%a1%e5%95%9f%e7%94%a8-pxe/#%E8%A7%A3%E6%B1%BA%E6%96%B9%E5%BC%8F" title="解決方式"&gt;解決方式&lt;/a&gt;
+ &lt;/li&gt;
+ &lt;/ul&gt;&lt;/nav&gt;
+&lt;/div&gt;
+&lt;h2 id="解決方式"&gt;&lt;span class="ez-toc-section" id="%E8%A7%A3%E6%B1%BA%E6%96%B9%E5%BC%8F"&gt;&lt;/span&gt;解決方式&lt;span class="ez-toc-section-end"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;先下載 82599ES 的 firmware，應該會得到一個 IBABUILD.exe 的 DOS 執行檔，然後在透過 DOS 執行編譯還有 flash firmware，就可以搞定了。指令有點忘記了，之後想到在補。&lt;/p&gt;</description></item></channel></rss>

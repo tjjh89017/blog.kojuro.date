@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vmware on 伊達's work</title><link>https://blog.kojuro.date/categories/vmware/</link><description>Recent content in Vmware on 伊達's work</description><generator>Hugo</generator><language>zh-TW</language><managingEditor>tjjh89017@hotmail.com (Date Huang)</managingEditor><webMaster>tjjh89017@hotmail.com (Date Huang)</webMaster><lastBuildDate>Sat, 09 Jul 2022 23:20:26 +0800</lastBuildDate><atom:link href="https://blog.kojuro.date/categories/vmware/index.xml" rel="self" type="application/rss+xml"/><item><title>VMware vSwitch MAC Address Changes, Forged Transmits, Promiscuous Mode Operation</title><link>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</link><pubDate>Fri, 22 Oct 2021 14:06:31 +0000</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2021/10/2021-10-22-vmware-vswitch-mac-address-changes-forged-transmits-promiscuous-mode-operation/</guid><description>&lt;p&gt;VMware 的 vSwitch 中有以下三個選項可以讓你使用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MAC Address Changes&lt;/li&gt;
+&lt;li&gt;Forged Transmits&lt;/li&gt;
+&lt;li&gt;Promiscuous Mode Operation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主要是為了讓 VM 內的流量可以正常出來而需要選擇的，一般來說如果是要做 VM in VM了話，直接將三個一次打開是最簡單的處理方案。&lt;/p&gt;
+&lt;p&gt;這邊就依據三個分別去簡單解釋不同意義&lt;/p&gt;</description></item></channel></rss>
