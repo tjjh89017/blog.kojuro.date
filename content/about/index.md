@@ -44,7 +44,7 @@ I have given 20+ talks at international and regional conferences:
 
 | Year | Conference | Topic |
 |------|-----------|-------|
-| 2026 | AsiaBSDCon 2026 (Tokyo) | Porting STUNMESH-go to FreeBSD and macOS: Building Peer-to-Peer WireGuard Networks |
+| 2026 | AsiaBSDCon 2026 | Porting STUNMESH-go to FreeBSD and macOS: Building Peer-to-Peer WireGuard Networks |
 | 2026 | FOSDEM 2026 (Brussels) | STUNMESH-go: Building P2P WireGuard Mesh Without Self-Hosted Infrastructure |
 | 2025 | COSCUP 2025 | STUNMESH-go: WireGuard NAT Traversal Tool - Origin and Introduction |
 | 2024 | VMUG Australia Meetup | How to Configure and Maintain BGP-EVPN with VyOS in VMware vSphere Solutions |
