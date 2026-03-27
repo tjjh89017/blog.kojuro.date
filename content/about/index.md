@@ -9,21 +9,28 @@ lightgallery: true
 
 ## Hi, I'm Date Huang
 
-I am a Cloud and Network Solution Architect based in Taiwan. I design and build cloud infrastructure, data center networks, and hybrid cloud solutions. I have 7+ years of experience with AWS, Azure, GCP, OpenStack, and Kubernetes. I also maintain several open-source projects and speak at international conferences. If you want to work with me or talk about a project, please check my [resume](./resume_20260313_rev1.pdf), find me on [GitHub](https://github.com/tjjh89017) or [LinkedIn](https://www.linkedin.com/in/tjjh89017/), or send me an email at tjjh89017 [AT] hotmail.com.
+I am a Cloud and Network Solution Architect based in Taiwan. I design and build cloud infrastructure, data center networks, and hybrid cloud solutions. I have 7+ years of experience with AWS, Azure, GCP, OpenStack, and Kubernetes. I also maintain several open-source projects and speak at international conferences.
+
+## Contact
+
+- **Email:** tjjh89017 [AT] hotmail.com
+- **GitHub:** [tjjh89017](https://github.com/tjjh89017)
+- **LinkedIn:** [tjjh89017](https://www.linkedin.com/in/tjjh89017/)
+- **Resume:** [Download PDF](./resume_20260313_rev1.pdf)
 
 ## What I Do Now
 
 I currently work as a Cloud and Network Solution Architect. I design BGP EVPN overlay networks on AWS for high-frequency financial trading. I connect AWS EKS clusters with on-premises data centers using VyOS routers and BGP EVPN. I also introduced Cloudflare Zero Trust to replace traditional VPN for better security.
 
-I am also a contributor to the VyOS open-source project, where I work on the Kubernetes operator, ARM64 platform porting, and WireGuard mesh networking.
+I am also a contributor to the VyOS open-source project, where I work on the Kubernetes operator, ARM64 platform porting, and WireGuard mesh networking. I actively maintain several open-source projects including [vRouter-Operator](https://github.com/tjjh89017/vrouter-operator), [STUNMESH-go](https://github.com/tjjh89017/stunmesh-go), and [EZIO](https://github.com/tjjh89017/ezio).
 
 ## Open Source Projects
 
 ### Projects I Maintain
 
-- **[vRouter-Operator](https://github.com/tjjh89017/vrouter-operator)** - A Kubernetes Operator written in Go for VyOS router configuration management. It uses a CRD-based architecture with VRouterTemplate, VRouterTarget, VRouterBinding, and VRouterConfig resources. It delivers configuration through QEMU Guest Agent over VirtIO channel, so it does not need SSH or network access to the router. It supports KubeVirt and Proxmox VE as backends, and includes validating webhooks and Helm chart packaging. Released v1.0.0 in March 2026.
-- **[STUNMESH-go](https://github.com/tjjh89017/stunmesh-go)** - A tool that builds peer-to-peer WireGuard mesh VPN without self-hosted infrastructure. It uses STUN with raw sockets and cBPF to discover NAT endpoints. It supports pluggable backends including Cloudflare DNS and shell scripts. It works on Linux (amd64, arm, arm64, mipsle), FreeBSD, macOS, and embedded routers like VyOS, EdgeOS, and OpenWrt. Presented at FOSDEM 2026 and AsiaBSDCon 2026.
-- **[EZIO](https://github.com/tjjh89017/ezio)** - A BitTorrent-based bare-metal OS deployment tool developed with support from the National Center for High-Performance Computing (NCHC), Taiwan. It uses peer-to-peer data distribution so the deployment time stays nearly constant no matter how many machines you deploy. It streams data directly to the disk without buffering, and supports many file systems (ext2/3/4, NTFS, FAT, Btrfs, XFS, and more). It was integrated into Clonezilla as Lite Server mode since version 2.6.0-31. Written in C++ using libtorrent-rasterbar. Published in MDPI Applied Sciences (2019) and IEEE Access (2021).
+- **[STUNMESH-go](https://github.com/tjjh89017/stunmesh-go)** ![GitHub stars](https://img.shields.io/github/stars/tjjh89017/stunmesh-go?style=flat) - A tool that builds peer-to-peer WireGuard mesh VPN without self-hosted infrastructure. It uses STUN with raw sockets and cBPF to discover NAT endpoints. It supports pluggable backends including Cloudflare DNS and shell scripts. It works on Linux (amd64, arm, arm64, mipsle), FreeBSD, macOS, and embedded routers like VyOS, EdgeOS, and OpenWrt. Presented at FOSDEM 2026 and AsiaBSDCon 2026.
+- **[EZIO](https://github.com/tjjh89017/ezio)** ![GitHub stars](https://img.shields.io/github/stars/tjjh89017/ezio?style=flat) - A BitTorrent-based bare-metal OS deployment tool developed with support from the National Center for High-Performance Computing (NCHC), Taiwan. It uses peer-to-peer data distribution so the deployment time stays nearly constant no matter how many machines you deploy. It streams data directly to the disk without buffering, and supports many file systems (ext2/3/4, NTFS, FAT, Btrfs, XFS, and more). It was integrated into Clonezilla as Lite Server mode since version 2.6.0-31. Written in C++ using libtorrent-rasterbar. Published in MDPI Applied Sciences (2019) and IEEE Access (2021).
+- **[vRouter-Operator](https://github.com/tjjh89017/vrouter-operator)** ![GitHub stars](https://img.shields.io/github/stars/tjjh89017/vrouter-operator?style=flat) - A Kubernetes Operator written in Go for VyOS router configuration management. It uses a CRD-based architecture with VRouterTemplate, VRouterTarget, VRouterBinding, and VRouterConfig resources. It delivers configuration through QEMU Guest Agent over VirtIO channel, so it does not need SSH or network access to the router. It supports KubeVirt and Proxmox VE as backends, and includes validating webhooks and Helm chart packaging. Released v1.0.0 in March 2026.
 - **[VyOS on DPU](https://github.com/tjjh89017/vyos-build-arm64)** - Ported VyOS to NVIDIA BlueField-2 DPU and ARM64 platforms. Built custom ARM64 images with kernel patches. Tested on Ampere eMAG, ARM64 VM, and Raspberry Pi 4.
 - **[kvnet](https://github.com/tjjh89017/kvnet)** - A VXLAN overlay network controller for Kubernetes and KubeVirt. It provides OpenStack Neutron-like L2/L3 overlay networking with VXLAN and VPC for multi-tenant network isolation. Built entirely with native Linux network components.
 - **DozenCloud Project** - One of the earliest independent efforts to build an OpenStack cloud on ARM64 hardware. Started in 2015 to provide ARM virtual environments for university students using affordable ARM boards (Raspberry Pi, Banana Pi M2). Later ported to ARMv8 64-bit on GIGABYTE R150-T60 servers. Presented at SITCON 2016, OpenStack Day Taiwan 2016, and Open Source Summit North America 2017.
