@@ -4,14 +4,15 @@ baseURL = "https://blog.kojuro.date"
 theme = "LoveIt"
 
 # website title
-title = "伊達's work"
+title = "Date Huang's work"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-tw"
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-TW"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "繁體中文"
+#languageName = "繁體中文"
+languageName = "English"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = true
 
