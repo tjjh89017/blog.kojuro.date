@@ -7,9 +7,9 @@ theme = "LoveIt"
 title = "Date Huang's work"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "zh-tw"
+defaultContentLanguage = "en"
 # language code ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "zh-TW"
+languageCode = "en"
 # language name ["English", "简体中文", "Français", "Polski", ...]
 #languageName = "繁體中文"
 languageName = "English"
