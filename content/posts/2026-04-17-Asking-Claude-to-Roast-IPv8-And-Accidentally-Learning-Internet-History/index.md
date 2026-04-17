@@ -1,5 +1,5 @@
 ---
-title: "Asking Claude to Roast IPv8 and Accidentally Learning Internet History"
+title: "叫 Claude 嘴 IPv8，意外聊進了網路協定演化史"
 subtitle: "IPv8 沒料，但這場對話有料"
 date: 2026-04-17T22:21:01+08:00
 lastmod: 2026-04-17T22:21:01+08:00
