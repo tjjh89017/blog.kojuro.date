@@ -156,13 +156,17 @@ Table of Contents
    IPv8 proponents claim that IPv8 "learned from the mistakes of
    IPv6".  The lessons appear to be:
 
-   *  Make the header larger.
-   *  Make the addresses larger.
-   *  Add more optional extensions nobody will implement consistently.
-   *  Remove the parts network operators actually liked.
+   *  Make the addresses smaller (64 bits, down from IPv6's 128).
+   *  Rebrand every existing protocol by appending "8" to its name
+      (DHCP8, DNS8, WHOIS8, BGP8, ARP8).
+   *  Require a mandatory OAuth2-based "Zone Server" that nobody
+      asked for.
+   *  Insist this is not dual-stack, while simultaneously specifying
+      IPv4 fallback via ARP8 version negotiation.
 
    The actual lesson of IPv6 is that transition is hard.  Making the
-   replacement weirder does not help.
+   replacement weirder does not help.  Making it smaller helps even
+   less.
 
 3.4.  The NAT Problem (Still)
 
@@ -179,8 +183,9 @@ Table of Contents
       +==================+======+======+======+=========+
       | Property         | IPv4 | IPv6 | IPv8 | IPvMeow |
       +==================+======+======+======+=========+
-      | Address bits     | 32   | 128  | 256  | 128     |
-      | Sufficient?      | No   | Yes  | Silly| Yes     |
+      | Address bits     | 32   | 128  | 64   | 128     |
+      | Sufficient?      | No   | Yes  | Again| Yes     |
+      |                  |      |      | no   |         |
       +------------------+------+------+------+---------+
       | Header simple?   | Yes  |Mostly| No   | Adorable|
       +------------------+------+------+------+---------+
@@ -190,12 +195,15 @@ Table of Contents
       | Solves NAT?      | N/A  | No   |"Yes" | No      |
       |                  |      |      |(lol) |         |
       +------------------+------+------+------+---------+
+      | Rebrands every   | No   | No   | Yes  | No      |
+      | tool with "8"?   |      |      |      |         |
+      +------------------+------+------+------+---------+
       | Cat face in hdr? | No   | No   | No   | =^..^=  |
       +------------------+------+------+------+---------+
       | Loved by cats?   | No   | No   | No   | Yes     |
       +------------------+------+------+------+---------+
-      | Transition plan  | N/A  | 25+  | LOL  | Cat     |
-      |                  |      | years|      | walks on|
+      | Transition plan  | N/A  | 25+  | ARP8 | Cat     |
+      |                  |      | years| nego | walks on|
       |                  |      |      |      | router  |
       +------------------+------+------+------+---------+
 
@@ -329,9 +337,11 @@ Table of Contents
 
    Source / Destination Paw Address (128 bits each):
       128-bit addresses, identical to IPv6.  The author sees no
-      reason to repeat IPv8's mistake of demanding 256-bit
-      addresses so that every atom in the observable universe may
-      be individually addressable, plus spares.
+      reason to repeat IPv8's mistake of reverting to 64-bit
+      addresses (32 bits of ASN plus 32 bits of host), which is
+      the networking equivalent of solving traffic congestion by
+      narrowing the highway, and which restores precisely the
+      exhaustion problem that motivated IPv6 in the first place.
 
    =^..^= (8 bits):
       Mandatory cat face.  Implementations that omit this field
