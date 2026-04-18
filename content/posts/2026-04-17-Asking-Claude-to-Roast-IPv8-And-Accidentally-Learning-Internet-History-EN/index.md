@@ -65,9 +65,9 @@ The content of this post comes from my conversation with AI (Claude). Claude's r
 
 > **Note:** This is an English translation of the original post. The conversation with Claude was in Mandarin Chinese. [Read the original Chinese version here]({{< relref "2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history/" >}}).
 
-Today I saw someone post an [IPv8 draft](https://datatracker.ietf.org/doc/draft-thain-ipv8/) on IETF. My first thought was: "Does this have anything to offer?" So I sent it to Claude and started a conversation.
+Today I saw someone post an [IPv8 draft](https://datatracker.ietf.org/doc/draft-thain-ipv8/) on IETF. One quick read was enough to see there was nothing there — weak technical foundation, and it did not actually solve the problems it claimed to solve. I sent it to Claude anyway, partly to confirm my gut, and partly to see what else might come out of the conversation.
 
-The answer came in about three seconds: no, it does not. The technical foundation is weak, and the community reaction has been almost entirely negative.
+Three seconds later, Claude agreed: nothing there. The community reaction has been almost entirely negative too.
 
 But the interesting part is that the conversation did not stop there. I kept asking follow-up questions: Why did this person submit this proposal? Is there any chance we are all wrong? What if this draft had appeared in the 1990s? Why did IPv6 choose not to be backward compatible? What will the future internet look like?
 
