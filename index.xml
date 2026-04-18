@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Date Huang's work</title><link>https://blog.kojuro.date/</link><description>Date Huang's work</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tjjh89017@hotmail.com (Date Huang)</managingEditor><webMaster>tjjh89017@hotmail.com (Date Huang)</webMaster><lastBuildDate>Fri, 17 Apr 2026 22:21:01 +0800</lastBuildDate><atom:link href="https://blog.kojuro.date/index.xml" rel="self" type="application/rss+xml"/><item><title>Asking Claude to Roast IPv8 and Accidentally Learning Internet History (English)</title><link>https://blog.kojuro.date/2026/04/2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history-en/</link><pubDate>Fri, 17 Apr 2026 22:21:01 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2026/04/2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history-en/</guid><description><![CDATA[<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Disclaimer<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">The content of this post comes from my conversation with AI (Claude). Claude&rsquo;s replies may contain factual errors or inaccuracies. However, I think it is still valuable as a starting point for thinking and discussion. Please use your own judgment and verify key information.</div>
+        </div>
+    </div>
+<blockquote>
+<p><strong>Note:</strong> This is an English translation of the original post. The conversation with Claude was in Mandarin Chinese. <a href="/2026/04/2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history/" rel="">Read the original Chinese version here</a>.</p>
+</blockquote>
+<p>Today I saw someone post an <a href="https://datatracker.ietf.org/doc/draft-thain-ipv8/" target="_blank" rel="noopener noreffer ">IPv8 draft</a> on IETF. One quick read was enough to see there was nothing there — weak technical foundation, and it did not actually solve the problems it claimed to solve. I sent it to Claude anyway, partly to confirm my gut, and partly to see what else might come out of the conversation.</p>
+<p>Three seconds later, Claude agreed: nothing there. The community reaction has been almost entirely negative too.</p>
+<p>But the interesting part is that the conversation did not stop there. I kept asking follow-up questions: Why did this person submit this proposal? Is there any chance we are all wrong? What if this draft had appeared in the 1990s? Why did IPv6 choose not to be backward compatible? What will the future internet look like?</p>
+<p>As we talked, I found that even though IPv8 itself is clearly dead on arrival, <strong>the conversation itself</strong> made me rethink many things — the time window for protocol adoption, the idea that being technically correct does not mean successful deployment, and why the thinking of &ldquo;one protocol solves everything&rdquo; is already outdated.</p>
+<p>Below is the full conversation between me and Claude. I kept Claude&rsquo;s thinking process and search references. I should also mention that Claude has memory of my past conversations, so its replies sometimes mention things that seem unrelated — like STUNMESH-go, KubeVirt, or EVPN/VXLAN. These are projects and technical areas I work on, and Claude uses them as comparisons and references.</p>
+<p>I will not add extra comments or notes to the conversation below. Some details may not be fully accurate, but I think the point is not to get every fact perfect — it is to enjoy the process of reading and thinking.</p>
+<p>Format guide:</p>
+<ul>
+<li>
+<blockquote>
+<p><strong>🧑 Me</strong> is my question</p>
+</blockquote>
+</li>
+<li><strong>🤖 Claude</strong> is Claude&rsquo;s reply</li>
+<li>💭 <strong>Thinking Process</strong> is Claude&rsquo;s internal reasoning (expandable)</li>
+<li>🔍 <strong>Search References</strong> are the external sources Claude looked up</li>
+</ul>]]></description></item><item><title>叫 Claude 嘴 IPv8，意外聊進了網路協定演化史</title><link>https://blog.kojuro.date/2026/04/2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history/</link><pubDate>Fri, 17 Apr 2026 22:21:01 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2026/04/2026-04-17-asking-claude-to-roast-ipv8-and-accidentally-learning-internet-history/</guid><description><![CDATA[<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>聲明<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">本文內容來自我與 AI (Claude) 的對話，AI 的回覆可能包含事實錯誤或不精確的地方。但作為思考方向的參考和討論的起點，我認為已經足夠有價值。請讀者自行判斷並查證關鍵資訊。</div>
+        </div>
+    </div>
+<p>今天看到 IETF 上有人提了一份 <a href="https://datatracker.ietf.org/doc/draft-thain-ipv8/" target="_blank" rel="noopener noreffer ">IPv8 draft</a>，快速掃過一遍就知道沒料 — 技術上站不住腳，該解的問題也沒真的解到。不過我還是丟給 Claude 聊聊，一方面確認自己的直覺，另一方面想看看還能聊出什麼別的東西。</p>
+<p>三秒後 Claude 也同意：沒料。社群反應也是一面倒的嘲諷。</p>
+<p>但有趣的是，對話沒有停在那裡。我繼續追問：這個人為什麼要提這個方案？有沒有可能我們都錯了？如果這份 draft 出現在 1990 年代呢？IPv6 當初為什麼選擇不向後相容？未來的網路到底會長什麼樣？</p>
+<p>一路聊下來，我發現雖然 IPv8 本身確實是 dead on arrival，但<strong>這場對話本身</strong>卻讓我重新想了很多事，協定演化的時間窗口、技術正確不等於部署成功、以及「一個協定解決所有問題」的思維為什麼已經過時。</p>
+<p>以下是我和 Claude 的完整對話紀錄。我保留了 Claude 的思考過程和搜尋參考。另外要說明的是，Claude 因為有我過去對話的記憶（memory），所以回覆中會提到一些看似無關的東西，像是 STUNMESH-go、KubeVirt、EVPN/VXLAN 等，這些是我平常在做的專案和技術領域，Claude 拿來當作類比和參照。</p>
+<p>我不會在下面的對話中額外加註或評論。內容可能有些事實錯誤，但我覺得重點不在每個細節是否精確，而是享受閱讀和思考的過程。</p>
+<p>格式說明：</p>
+<ul>
+<li>
+<blockquote>
+<p><strong>🧑 我</strong> 是我的提問</p>
+</blockquote>
+</li>
+<li><strong>🤖 Claude</strong> 是 Claude 的回覆</li>
+<li>💭 <strong>思考過程</strong> 是 Claude 內部的推理過程（可展開）</li>
+<li>🔍 <strong>搜尋參考</strong> 是 Claude 查詢的外部資料</li>
+</ul>]]></description></item><item><title>Managing VyOS Routers from Kubernetes with vRouter-Operator</title><link>https://blog.kojuro.date/2026/03/2026-03-28-intro-vrouter-operator/</link><pubDate>Sat, 28 Mar 2026 22:29:30 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2026/03/2026-03-28-intro-vrouter-operator/</guid><description><![CDATA[<p>If you run VyOS routers on KubeVirt, Proxmox VE, or bare-metal servers, you probably want a simple way to push configuration to them. That is what <strong>vRouter-Operator</strong> does. It is a Kubernetes operator that manages VyOS router configuration in a declarative way. No SSH, no manual login, just Kubernetes resources.</p>
+<p>In this post, I will explain what vRouter-Operator is, how it works, and how <strong>vRouter-Daemon</strong> extends it to support bare-metal routers.</p>]]></description></item><item><title>參加FOSDEM 2026 的經驗分享</title><link>https://blog.kojuro.date/2026/02/2026-02-12-fosdem-experience/</link><pubDate>Thu, 12 Feb 2026 21:05:38 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2026/02/2026-02-12-fosdem-experience/</guid><description><![CDATA[<div class="featured-image">
+                <img src="/images/fosdem.png" referrerpolicy="no-referrer">
+            </div><p>分享一下，拿著自己的Side Project，跑去FOSDEM 2026演講的經驗與過程</p>]]></description></item><item><title>Proxmox VE UEFI VM boot from NVMe Passthrough or PXE</title><link>https://blog.kojuro.date/2025/12/2025-12-27-proxmox-ve-uefi-vm-boot-from-nvme-or-pxe/</link><pubDate>Sat, 27 Dec 2025 21:26:04 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2025/12/2025-12-27-proxmox-ve-uefi-vm-boot-from-nvme-or-pxe/</guid><description>&lt;p>紀錄一下被Proxmox VE坑到的情況，如果你需要把NVMe Passthrough給VM，想要透過NVMe開機的情況，或是需要使用UEFI PXE的情境。&lt;/p></description></item><item><title>如何用Viber Out打電話時可以正確地送出數字鍵功能</title><link>https://blog.kojuro.date/2025/09/2025-09-22-viber-out-dtmf/</link><pubDate>Mon, 22 Sep 2025 16:17:23 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2025/09/2025-09-22-viber-out-dtmf/</guid><description>&lt;p>如何用Viber Out打電話時可以正確地送出數字鍵功能&lt;/p></description></item><item><title>記錄怎麼把有ARccOS保護的DVD備份起來</title><link>https://blog.kojuro.date/2025/09/2025-09-21-dvd-ripper/</link><pubDate>Sun, 21 Sep 2025 20:48:39 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2025/09/2025-09-21-dvd-ripper/</guid><description>&lt;p>記錄怎麼把有ARccOS保護的DVD備份起來&lt;/p></description></item><item><title>在VyOS上班的第一年</title><link>https://blog.kojuro.date/2024/09/2024-09-03-first-year-in-vyos/</link><pubDate>Tue, 03 Sep 2024 22:58:34 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2024/09/2024-09-03-first-year-in-vyos/</guid><description>&lt;p>簡單記錄下在VyOS Networks上班的第一年&lt;/p></description></item><item><title>Raspberry Pi 4 Console</title><link>https://blog.kojuro.date/2023/08/2023-08-26-raspberry-pi-4-console/</link><pubDate>Sat, 26 Aug 2023 23:27:55 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2023/08/2023-08-26-raspberry-pi-4-console/</guid><description>&lt;p>快速記錄下 Raspberry Pi 4 的 Console/UART 等等的三小問題&lt;/p></description></item><item><title>firewalld nftables iptables 之間的關聯</title><link>https://blog.kojuro.date/2023/04/2023-04-12-firewalld-nftables-iptables/</link><pubDate>Wed, 12 Apr 2023 00:40:50 +0800</pubDate><author>tjjh89017@hotmail.com (Date Huang)</author><guid>https://blog.kojuro.date/2023/04/2023-04-12-firewalld-nftables-iptables/</guid><description>&lt;p>快速紀錄一下研究 firewalld, nftables, iptables 之間的關聯，還有坑。&lt;/p></description></item></channel></rss>
