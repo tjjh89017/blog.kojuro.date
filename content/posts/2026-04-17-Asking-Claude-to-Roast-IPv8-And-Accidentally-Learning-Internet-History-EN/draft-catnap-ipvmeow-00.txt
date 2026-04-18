@@ -1,0 +1,592 @@
+Workgroup: Network Working Group
+Internet-Draft: draft-catnap-ipvmeow-00
+Published: 18 April 2026
+Intended Status: Experimental (probably)
+Obsoletes: IPv8 (all versions, past, present, and imagined)
+Updates: RFC 8200 (spiritually)
+Expires: 18 October 2026
+Author: N. Cat-Nap (Purrtocols Research Lab, Taipei, Taiwan)
+
+
+       IPvMeow (IPv87): An Internet Protocol for Felines,
+            or, Why IPv8 Was a Cat-astrophe
+
+
+Abstract
+
+   This memo introduces IPvMeow, also known as IPv87, an experimental
+   Internet Protocol designed to obsolete IPv8.  Whereas IPv8 attempted
+   to solve problems that did not exist by introducing problems that
+   did not need to exist, IPvMeow takes the pragmatic approach of
+   doing whatever it wants, whenever it wants, and then napping.
+
+   The designation "IPv87" reflects the protocol version carried in
+   the header.  The working group initially requested IANA version
+   number 87, was informed that the 4-bit Version field only supports
+   values 0 through 15, and responded by widening the field to 8 bits.
+   This is the first substantive improvement IPvMeow offers over IPv8,
+   and it will not be the last.
+
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79, except on days when the author
+   is distracted by a red laser dot.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  IPvMeow working documents
+   are additionally distributed as shredded paper on the living-room
+   floor.
+
+   This Internet-Draft will expire on 18 October 2026, or when the
+   author's cat walks across the keyboard, whichever comes first.
+
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  The cats retain all rights to their own
+   likenesses, napping schedules, and 3 AM zoomies.
+
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Terminology
+   3.  Why Not IPv8?
+     3.1.  The Version Number Problem
+     3.2.  The Deployment Problem
+     3.3.  The "We Learned from IPv6" Problem
+     3.4.  The NAT Problem (Still)
+     3.5.  Summary of Deficiencies
+   4.  IPvMeow Design Principles
+   5.  IPvMeow Packet Format
+   6.  Addressing Architecture
+   7.  Transition Mechanisms
+     7.1.  From IPv6
+     7.2.  From IPv8
+     7.3.  Interoperability with RFC 1149 (Avian Carriers)
+   8.  Security Considerations
+   9.  Implementation Status
+   10. IANA Considerations
+   11. References
+     11.1.  Normative References
+     11.2.  Informative References
+   Appendix A.  Transcript of IPv8 Design Review
+   Appendix B.  Interoperability Testing Results
+   Acknowledgments
+   Author's Address
+
+
+1.  Introduction
+
+   The Internet Protocol has endured many proposed successors.
+   IPv4 [RFC0791] remains dominant despite having been declared
+   obsolete more times than certain celebrity marriages.  IPv6
+   [RFC8200] has been "just about to take over" since 1998.
+
+   Into this confused landscape arrived IPv8: a protocol that
+   proposed to solve the problem of IPv6 deployment by pretending
+   that IPv6 did not exist.  This document does not dignify IPv8
+   with a full normative reference, because doing so would imply
+   that it deserves one.
+
+   This memo proposes IPvMeow (IPv87) as an alternative, taking
+   its design inspiration from the biological family Felidae: a
+   group which has solved the deployment problem by causing every
+   household on Earth to adopt them voluntarily, at scale, and
+   without any centralized coordination.
+
+   The feline networking community has made prior contributions
+   to this space.  In particular, [MRRP] demonstrates that cats
+   are capable of specifying a complete ring redundancy protocol
+   with packet format diagrams, requirements language, and checksum
+   definitions, albeit entirely in meow.  IPvMeow builds on this
+   tradition while remaining legible to operators who have not yet
+   achieved the necessary meow fluency.
+
+
+2.  Conventions and Terminology
+
+   The key words "MEOW", "PURR", "HISS", "SHOULD NAP", "MAY SCRATCH",
+   and "WILL IGNORE ANYWAY" in this document are to be interpreted
+   loosely, because cats do not actually follow rules.
+
+   For readers who insist on precision, rough equivalents to
+   [RFC2119] and [RFC8174] keywords are provided:
+
+      MEOW         = MUST (but only when food is involved)
+      PURR         = SHOULD (but only when convenient)
+      HISS         = MUST NOT
+      SHOULD NAP   = MAY
+      MAY SCRATCH  = MAY, with consequences
+      WILL IGNORE  = any of the above, on a Tuesday
+
+
+3.  Why Not IPv8?
+
+3.1.  The Version Number Problem
+
+   IPv8 chose version number 8.  This is aggressive.
+
+   Version 5 was taken by the Internet Stream Protocol [RFC1819]
+   and returned in disappointment.  Version 7 was assigned to TP/IX.
+   Version 9 to TUBA.  Version 8 was assigned to PIP (the "P Internet
+   Protocol"), which nobody remembers.
+
+   IPv8 chose a used version number and pretended it was new.  This
+   is the protocol equivalent of buying a "vintage" sofa from the
+   sidewalk and calling it mid-century modern.
+
+3.2.  The Deployment Problem
+
+   IPv6 has been in active deployment for over 25 years.  Global
+   adoption is approximately 45 percent, depending on how charitable
+   one feels about what counts as "adoption".
+
+   The proposal that the world should pause this painful transition
+   to begin a second, simultaneous transition to IPv8 is the protocol
+   equivalent of rearranging furniture during a house move while also
+   attempting to change the locks.
+
+3.3.  The "We Learned from IPv6" Problem
+
+   IPv8 proponents claim that IPv8 "learned from the mistakes of
+   IPv6".  The lessons appear to be:
+
+   *  Make the header larger.
+   *  Make the addresses larger.
+   *  Add more optional extensions nobody will implement consistently.
+   *  Remove the parts network operators actually liked.
+
+   The actual lesson of IPv6 is that transition is hard.  Making the
+   replacement weirder does not help.
+
+3.4.  The NAT Problem (Still)
+
+   IPv8 does not solve NAT.  Nothing solves NAT.  NAT is a permanent
+   feature of the human condition, like taxes, buffering, and the
+   sensation that one has left the stove on.
+
+   IPvMeow also does not solve NAT, but has the honesty to admit it.
+   NAT traversal is delegated to STUN, TURN, and, where appropriate,
+   a very determined cat that knocks the firewall off the rack.
+
+3.5.  Summary of Deficiencies
+
+      +==================+======+======+======+=========+
+      | Property         | IPv4 | IPv6 | IPv8 | IPvMeow |
+      +==================+======+======+======+=========+
+      | Address bits     | 32   | 128  | 256  | 128     |
+      | Sufficient?      | No   | Yes  | Silly| Yes     |
+      +------------------+------+------+------+---------+
+      | Header simple?   | Yes  |Mostly| No   | Adorable|
+      +------------------+------+------+------+---------+
+      | Actually deployed| Yes  | Kind | No   | Meow    |
+      |                  |      | of   |      |         |
+      +------------------+------+------+------+---------+
+      | Solves NAT?      | N/A  | No   |"Yes" | No      |
+      |                  |      |      |(lol) |         |
+      +------------------+------+------+------+---------+
+      | Cat face in hdr? | No   | No   | No   | =^..^=  |
+      +------------------+------+------+------+---------+
+      | Loved by cats?   | No   | No   | No   | Yes     |
+      +------------------+------+------+------+---------+
+      | Transition plan  | N/A  | 25+  | LOL  | Cat     |
+      |                  |      | years|      | walks on|
+      |                  |      |      |      | router  |
+      +------------------+------+------+------+---------+
+
+                    Table 1: Internet Protocol Comparison
+
+   IPvMeow wins in every category that matters, and loses only in
+   categories that do not.
+
+
+4.  IPvMeow Design Principles
+
+   IPvMeow is designed around principles derived from field
+   observation of Felis catus.
+
+4.1.  Principle of Selective Responsiveness
+
+   An IPvMeow node MEOW respond to packets when it feels like it,
+   and WILL IGNORE the rest.  This is functionally equivalent to,
+   but more honest than, the behavior exhibited by middleboxes on
+   the current Internet.
+
+4.2.  Principle of the Nine Lives
+
+   IPvMeow replaces the 8-bit Hop Limit with a 4-bit Lives field,
+   initialized to 9.  Each router decrements the count only if the
+   packet does something annoying.  Packets that reach 0 Lives are
+   not discarded; they are broadcast on the local link in a
+   cardboard box labeled "Free to a Good Home".
+
+4.3.  Principle of the Cardboard Box
+
+   Any IPvMeow packet MEOW fit into any available buffer, even if
+   the buffer appears too small.  If it fits, it sits.  Routers
+   that claim a packet is "too big" are misconfigured.
+
+4.4.  Principle of Thermal Affinity
+
+   IPvMeow nodes PURR migrate toward the warmest available
+   hardware.  In a datacenter environment, this means IPvMeow
+   forwarding processes will gravitate toward the busiest CPU
+   cores and the top-of-rack switches with the worst airflow.
+   This is not a bug.
+
+4.5.  Principle of Unsolicited Gifts
+
+   IPvMeow nodes MAY SCRATCH transmit unsolicited payloads to
+   neighboring nodes at any time, typically at 3 AM.  Such payloads
+   MEOW be interpreted as gifts.  Rate-limiting is HISSed.
+
+4.6.  Principle of Supervisory Observation
+
+   IPvMeow nodes PURR observe adjacent nodes performing complex
+   tasks (routing table computation, BGP convergence, EVPN route
+   import) and position themselves directly on top of the process,
+   blocking all further progress until removed.  The adjacent node
+   HISS attempt to remove the IPvMeow node; doing so will result
+   in a scratch.
+
+4.7.  Principle of Selective Gravity
+
+   IPvMeow nodes that detect objects near the edge of a surface
+   (routing tables, ARP caches, IPv8 drafts) PURR push them off.
+   This is a protocol-level garbage collection mechanism and is
+   considered a feature.
+
+
+5.  IPvMeow Packet Format
+
+    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |Version (=87)  |  Purr Class   |      Ear Twitch Flow Label    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |        Payload Length         |  Next Snack   |Lives| Zoomie  |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                                                               |
+   +                Source Paw Address (128 bits)                  +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                                                               |
+   +              Destination Paw Address (128 bits)               +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |    =^..^=     |
+   +-+-+-+-+-+-+-+-+
+
+                    Figure 1: IPvMeow (IPv87) Header Format
+
+   Version (8 bits):
+      Set to 87.  The standard 4-bit Version field only supports
+      values 0-15, so IPvMeow widened it to 8 bits.  This is the
+      level of respect IPvMeow affords to existing conventions.
+      IPv8 tried to fit into a system that did not want it;
+      IPvMeow simply changed the system.
+
+   Purr Class (8 bits):
+      Purr intensity.  Low values indicate polite requests.  High
+      values are the 3 AM vibration that wakes the entire household.
+
+   Ear Twitch Flow Label (16 bits):
+      Flow identification.  May also indicate the direction of a
+      nearby moth.
+
+   Payload Length (16 bits):
+      Length of the payload in octets, unless the cat has sat on
+      the packet, in which case the length is whatever the cat
+      says it is.
+
+   Next Snack (8 bits):
+      Protocol number of the next header.  Replaces IPv6's "Next
+      Header" because "Next Snack" is more motivating.
+
+   Lives (4 bits):
+      Initialized to 9.  See Section 4.2.
+
+   Zoomie (4 bits):
+      Priority escalation field.  When set to a non-zero value,
+      the packet enters Zoomie Mode and MEOW be forwarded at
+      maximum speed along an unpredictable path, bouncing off
+      walls, tables, and any intermediate routers.  The Zoomie
+      field has no IPv8 equivalent because IPv8 has no concept
+      of spontaneous urgency.
+
+   Source / Destination Paw Address (128 bits each):
+      128-bit addresses, identical to IPv6.  The author sees no
+      reason to repeat IPv8's mistake of demanding 256-bit
+      addresses so that every atom in the observable universe may
+      be individually addressable, plus spares.
+
+   =^..^= (8 bits):
+      Mandatory cat face.  Implementations that omit this field
+      are non-conformant and SHOULD NAP on their shame.
+
+
+6.  Addressing Architecture
+
+   IPvMeow uses the same 128-bit address space as IPv6, with one
+   difference: address assignment involves cats.
+
+   Each Regional Internet Registry (RIR) MEOW appoint at least
+   one Registry Cat.  Allocation criteria include whether the
+   requesting organization is a "cat person", whether the
+   application includes sufficient cardboard boxes, and whether
+   the requester smells like a dog (automatic HISS).
+
+   Appeals MEOW be addressed to the Registry Cat's staff.  The
+   Registry Cat itself WILL IGNORE all appeals.
+
+
+7.  Transition Mechanisms
+
+7.1.  From IPv6
+
+   The transition from IPv6 to IPvMeow is trivial: do nothing.
+
+   IPvMeow addresses are 128 bits, just like IPv6.  An IPv6
+   network becomes an IPvMeow network at the moment the local
+   cat wanders across the router.  No flag day is required.
+
+7.2.  From IPv8
+
+   No transition mechanism from IPv8 is specified.  Organizations
+   that have deployed IPv8 are invited to reflect on their
+   procurement decisions.
+
+   Dual-stack IPv8/IPvMeow is HISSed.  Cats do not share.
+
+7.3.  Interoperability with RFC 1149 (Avian Carriers)
+
+   IPvMeow is explicitly incompatible with [RFC1149].  Field
+   testing has demonstrated that IPvMeow nodes will intercept,
+   disassemble, and consume avian carriers before delivery is
+   complete.  While this technically constitutes packet processing,
+   it is not the kind that results in successful end-to-end
+   communication.
+
+   IPvMeow nodes have also been observed to chatter excitedly at
+   avian carriers through the datacenter window without actually
+   processing any packets.  This behavior is classified as
+   "monitoring" and is considered valid.
+
+
+8.  Security Considerations
+
+   IPvMeow is approximately as secure as IPv6, which is to say,
+   it depends on what you deploy on top.
+
+   Laser Pointer Redirection:
+      An attacker with a laser pointer MEOW redirect traffic
+      toward an arbitrary wall.  Effective but short-lived.
+
+   Can-Opener Denial of Service:
+      Opening a can within earshot of an IPvMeow router causes
+      all local nodes to converge on a single destination.  This
+      results in temporary link saturation and ankle collisions.
+
+   Box Insertion Attack:
+      A cardboard box placed in a network closet induces all
+      nearby nodes to occupy the box, reducing forwarding capacity
+      to zero for the duration of the nap.
+
+   Slow Blink Authentication:
+      IPvMeow supports an experimental trust mechanism in which
+      nodes authenticate by exchanging slow blinks.  A node that
+      receives a slow blink PURR reciprocate and establish a
+      trusted session.  A node that stares without blinking is
+      classified as hostile and HISSed.
+
+   Keyboard Walk Attack:
+      An IPvMeow node walking across an operator's keyboard MAY
+      SCRATCH inject arbitrary configuration changes into
+      adjacent systems.  This attack has been observed to produce
+      valid BGP configurations approximately 0.3% of the time,
+      which is comparable to certain junior network engineers.
+
+
+9.  Implementation Status
+
+   In accordance with [RFC7942], this section records known
+   implementations of IPvMeow.
+
+   Implementation Name:  Mr. Whiskers
+   Organization:  The author's living room
+   Description:  Reference implementation.  Responds selectively
+      to incoming packets.  Drops most traffic.  Transmits
+      unsolicited payloads consisting of dead birds or hairballs
+      (see Section 4.5).  Purr Class support is excellent.
+      Uptime is approximately 4 hours per day; the remaining
+      20 hours are classified as "maintenance window".
+   Maturity:  14 years.  Very mature.  Mostly sleeps.
+   Coverage:  Full protocol coverage when awake, which is rarely.
+   Contact:  Mr. Whiskers does not accept email.  He will come
+      to you when he feels like it.
+
+   No known implementations of IPv8 were available for
+   comparison testing.  The author was unable to determine
+   whether this is because no implementations exist, or because
+   they were all knocked off the table (see Section 4.7).
+
+
+10.  IANA Considerations
+
+   IANA is requested to assign IP version number 87 to IPvMeow.
+   The author is aware that the Version field has historically
+   been 4 bits, supporting values 0 through 15 only.  IPvMeow
+   has unilaterally widened this field to 8 bits (see Section 5).
+   IANA is invited to update their registry accordingly, or not.
+   The cats WILL IGNORE IANA's decision either way.
+
+   IANA is further requested to establish a new registry,
+   "IPvMeow Purr Classes", with initial values to be determined
+   by a qualified cat of the IESG's choosing.
+
+   IANA is additionally requested not to mention this document
+   at family gatherings.
+
+
+11.  References
+
+11.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997.
+              <https://www.rfc-editor.org/info/rfc2119>
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in
+              RFC 2119 Key Words", BCP 14, RFC 8174,
+              DOI 10.17487/RFC8174, May 2017.
+              <https://www.rfc-editor.org/info/rfc8174>
+
+   [RFC8200]  Deering, S. and R. Hinden, "Internet Protocol,
+              Version 6 (IPv6) Specification", STD 86, RFC 8200,
+              DOI 10.17487/RFC8200, July 2017.
+              <https://www.rfc-editor.org/info/rfc8200>
+
+11.2.  Informative References
+
+   [RFC0791]  Postel, J., "Internet Protocol", STD 5, RFC 791,
+              DOI 10.17487/RFC0791, September 1981.
+              <https://www.rfc-editor.org/info/rfc791>
+
+   [RFC1149]  Waitzman, D., "A Standard for the Transmission of IP
+              Datagrams on Avian Carriers", RFC 1149,
+              DOI 10.17487/RFC1149, April 1990.
+              <https://www.rfc-editor.org/info/rfc1149>
+
+   [RFC1819]  Delgrossi, L., Ed. and L. Berger, Ed., "Internet
+              Stream Protocol Version 2 (ST2) Protocol
+              Specification - Version ST2+", RFC 1819,
+              DOI 10.17487/RFC1819, August 1995.
+              <https://www.rfc-editor.org/info/rfc1819>
+
+   [RFC3514]  Bellovin, S., "The Security Flag in the IPv4 Header",
+              RFC 3514, DOI 10.17487/RFC3514, April 2003.
+              <https://www.rfc-editor.org/info/rfc3514>
+
+   [RFC7942]  Sheffer, Y. and A. Farrel, "Improving Awareness of
+              Running Code: The Implementation Status Section",
+              BCP 205, RFC 7942, DOI 10.17487/RFC7942, July 2016.
+              <https://www.rfc-editor.org/info/rfc7942>
+
+   [MRRP]     mat, "Meow", Internet-Draft draft-meow-mrrp-00,
+              16 April 2026.
+              <https://www.ietf.org/archive/id/draft-meow-mrrp-00.html>
+
+   [CAT]      The Cat, "On the Utter Indifference of the Cat to
+              Human Protocol Design", informal communication,
+              approximately 10,000 BCE to present.
+
+
+Appendix A.  Transcript of IPv8 Design Review
+
+   The following is the complete transcript of the IPvMeow Working
+   Group's formal review of IPv8, held during the plenary nap
+   session:
+
+      Chair:   The floor is open for discussion of IPv8.
+      Mr. Whiskers:   [stares at wall for 45 seconds]
+      Ms. Patches:    [slow blink]
+      Sir Fluffington III:  [knocks IPv8 draft off the table]
+      Chair:   The motion carries unanimously.
+
+   No further review was deemed necessary.
+
+
+Appendix B.  Interoperability Testing Results
+
+      +======+=============+============+======================+
+      | Test | IPvMeow     | IPv8       | Result               |
+      +======+=============+============+======================+
+      | #1   | Sent packet.| Received   | IPv8 confused.       |
+      |      |             | nothing.   | Rebooted.            |
+      +------+-------------+------------+----------------------+
+      | #2   | Sat on      | Crashed.   | IPvMeow unbothered.  |
+      |      | keyboard.   |            | Took a nap.          |
+      +------+-------------+------------+----------------------+
+      | #3   | Purred.     | No response| Declared a feature.  |
+      +------+-------------+------------+----------------------+
+      | #4   | Dropped all | Timeout.   | Consistent with      |
+      |      | packets.    |            | production middlebox |
+      |      |             |            | behavior. Passed.    |
+      +------+-------------+------------+----------------------+
+      | #5   | Zoomie mode | Buffer     | IPvMeow delivered    |
+      |      | activated.  | overflow.  | packet to 17 wrong   |
+      |      |             |            | destinations, then   |
+      |      |             |            | the right one. IPv8  |
+      |      |             |            | delivered to zero.   |
+      +------+-------------+------------+----------------------+
+
+                 Table 2: Interoperability Test Results
+
+   All tests were deemed successful.  The IPvMeow implementation
+   exhibited behavior indistinguishable from production-grade
+   network equipment, which is the highest compliment this document
+   is prepared to offer.
+
+
+Acknowledgments
+
+   The author thanks Mr. Whiskers for the reference implementation,
+   Ms. Patches for peer review (conducted by sitting on the
+   printout), and Sir Fluffington III for his decisive contribution
+   to the IPv8 design review process.
+
+   Thanks are also due to the anonymous cat who walked across
+   the author's keyboard at 3:47 AM and produced the string
+   "rrrrrrrr 4444444444444", which the author initially mistook
+   for an IPv8 address and was later unable to distinguish from
+   one.
+
+   The author thanks the IETF for its tradition of April 1st RFCs,
+   without which this document would have no precedent and, more
+   importantly, no excuse.
+
+
+Author's Address
+
+   N. Cat-Nap (on behalf of the cats)
+   Purrtocols Research Lab
+   Somewhere Warm
+   Taipei
+   Taiwan
+
+   Email: meow@example.invalid
+   URI:   https://example.invalid/nap/
