@@ -2,6 +2,7 @@
 title: "First Post"
 subtitle: ""
 date: 2022-07-09T22:31:25+08:00
+aliases: ["/2022/07/first-post/"]
 lastmod: 2022-07-09T22:31:25+08:00
 draft: false
 author: "Date Huang"

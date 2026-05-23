@@ -2,6 +2,7 @@
 title: "USB Modeswitch on Huawei ME909s"
 subtitle: ""
 date: 2022-07-29T23:13:47+08:00
+aliases: ["/2022/07/usb_modeswitch_on_huawei_me909s/"]
 lastmod: 2022-07-29T23:13:47+08:00
 draft: false
 author: ""

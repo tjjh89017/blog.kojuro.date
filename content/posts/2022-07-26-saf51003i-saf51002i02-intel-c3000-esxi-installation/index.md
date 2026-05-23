@@ -2,6 +2,7 @@
 title: "SAF51003I, SAF51002I02, Intel C3000 Esxi Installation"
 subtitle: ""
 date: 2022-07-26T17:37:55+08:00
+aliases: ["/2022/07/saf51003i-saf51002i02-intel-c3000-esxi-installation/"]
 lastmod: 2022-07-26T17:37:55+08:00
 draft: false
 author: ""
