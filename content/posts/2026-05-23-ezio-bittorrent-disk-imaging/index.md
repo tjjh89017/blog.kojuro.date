@@ -54,6 +54,12 @@ is the proper introduction it never got.
 
 <!--more-->
 
+## First, what "deploying an OS image" means
+
+If you've never run a lab or a server fleet, here's the workflow EZIO lives in. Say you need 200 machines (a computer classroom, a render farm, a rack of servers) to all boot the same operating system, with the same packages, drivers and config. You don't install Windows or Linux 200 times by hand. Instead you set up **one** machine exactly the way you want it, then take a byte-for-byte snapshot of its disk, called a **"golden image"**, and copy that image onto every other machine's disk. Power them on and they're all clones of the original.
+
+This is what tools like [Clonezilla](https://clonezilla.org/) do: capture a disk/partition into an image, then **restore** that image onto many targets at once. The capture is the easy half. The hard half is the *delivery*: getting tens of gigabytes onto hundreds of disks quickly, without the server melting or the network choking. That delivery step is the entire subject of this post, and it's where multicast (Clonezilla's traditional answer) starts to hurt.
+
 ## The problem: multicast doesn't scale the way you'd hope
 
 If you've ever had to re-image a computer classroom, a render farm, or a rack of
