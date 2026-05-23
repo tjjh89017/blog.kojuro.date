@@ -6,6 +6,7 @@
 {{- $params := .Page.Scratch.Get "params" | default (.Page.Params | merge .Page.Site.Params.page) -}}
 {{- $maxShownLines := $params.code.maxShownLines | default 10 | int -}}
 {{- $copy := $params.code.copy | default true -}}
+{{- $copyTitle := T "copyToClipboard" -}}
 {{- $lines := split $content "\n" | len -}}
 {{- $options := dict "lineNoStart" 1 "lineNos" true -}}
 {{- $options = .Options | partial "function/dict.html" | merge $options -}}
@@ -18,7 +19,7 @@
     <div class="code-header language-{{ $lang }}">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
-        {{ if $copy }}<span class="copy" title="{{ T "copyToClipboard" }}"><i class="far fa-copy" aria-hidden="true"></i></span>{{ end }}
+        {{ if $copy }}<span class="copy" title="{{ $copyTitle }}"><i class="far fa-copy" aria-hidden="true"></i></span>{{ end }}
     </div>
     {{- $result -}}
 </div>
