@@ -74,6 +74,16 @@ BitTorrent was designed for exactly the failure modes that hurt multicast. So EZ
 
 This is the same insight behind Twitter's [murder](https://github.com/lg/murder), Uber's [Kraken](https://github.com/uber/kraken), and Alibaba's Dragonfly - except those distribute *container images*. EZIO does it for **raw disk images**.
 
+## Two ways everyone else moves an image, both with a catch
+
+Solving the delivery problem with BitTorrent is only half the story. You still have to decide *what* you are actually transferring and *how* it lands on the target disk. Most existing tools pick one of two approaches, and both have a real cost.
+
+The first approach treats the whole disk or partition as a single opaque blob and transfers every sector of it. It is dead simple, but you ship the empty space too. A 500 GB partition holding 50 GB of real data still moves 500 GB across the wire. The "don't care" free space dominates the transfer, and you pay for it in time and bandwidth every single deployment.
+
+The second approach ships a disk-image format like qcow2 or vmdk. These are compact, because they only record the blocks that are actually used. The catch is in how they get written: the common path stages the image on the target and expands it back into a raw disk in RAM before flushing it out. That means the image cannot be larger than the target's memory. A 64 GB image needs 64 GB of RAM, which is a non-starter for most deploy nodes.
+
+So you are forced to choose: waste bandwidth shipping empty sectors, or stay under the ceiling of however much RAM the target happens to have. EZIO refuses both.
+
 ## What makes EZIO different: it writes to raw disk
 
 This is the part that took the most engineering. EZIO doesn't treat the torrent "files" as files at all. It operates directly on a **raw partition** (e.g. `/dev/sda1`):
@@ -118,7 +128,7 @@ With three leechers, aggregate delivered throughput is ~1.1 GB/s - and the seede
 
 ## How you actually use it
 
-The easy path: **Clonezilla Live (>= 2.6.0-31), Lite Server Mode.** EZIO is built in and driven through Clonezilla's menus - no compilation, no manual torrent juggling. That's how most people should run it. Steven Shiau at Taiwan's NCHC also maintains a [BT-from-disk tutorial](http://stevenshiau.org/clonezilla-live/bt-from-disk/).
+The easy path: **Clonezilla Live (>= 2.6.0-31), Lite Server Mode.** EZIO is built in and driven through Clonezilla's menus - no compilation, no manual torrent juggling. That's how most people should run it. Steven Shiau at Taiwan's NCHC also maintains a [BT-from-disk tutorial](https://clonezilla.org/fine-print-live-doc.php?path=./clonezilla-live/doc/12_lite_server_BT_from_dev/).
 
 If you want to drive it directly, the workflow is: capture an image with partclone, build a torrent, seed on the source, download on each target:
 
