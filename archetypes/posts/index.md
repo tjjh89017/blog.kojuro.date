@@ -31,7 +31,7 @@ toc:
   auto: false
 code:
   copy: true
-  maxShownLines: 50
+  maxShownLines: 200
 math:
   enable: false
   # ...
