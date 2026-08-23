@@ -51,6 +51,7 @@ I have given 20+ talks at international and regional conferences:
 
 | Year | Conference | Topic |
 |------|-----------|-------|
+| 2026 | Open Source Summit Korea 2026 | EZIO: Predictable, Fast, Scalable BitTorrent-Based Bare Metal Provisioning |
 | 2026 | DevConf.CZ 2026 (Brno) | vRouter-Operator: Bringing GitOps and IaC to Virtual Network Functions in Kubernetes |
 | 2026 | AsiaBSDCon 2026 | Porting STUNMESH-go to FreeBSD and macOS: Building Peer-to-Peer WireGuard Networks |
 | 2026 | FOSDEM 2026 (Brussels) | STUNMESH-go: Building P2P WireGuard Mesh Without Self-Hosted Infrastructure |
