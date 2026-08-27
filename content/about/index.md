@@ -63,6 +63,7 @@ I have given 20+ talks at international and regional conferences:
 | 2024 | COSCUP 2024 | The Business Challenges of Open Source Projects |
 | 2024 | OSC Nagoya 2024 (Japan) | Enterprise Networking with VyOS, an Open Source Router |
 | 2023 | COSCUP 2023 | Designing Kubernetes Controllers and CRDs in Practice - Using Networking as an Example |
+| 2021 | OpenInfra Day Asia 2021 | Online | Cloud Infrastructure Interconnect with Wireguard and OSPF |
 | 2021 | COSCUP 2021 | Cloud Infrastructure Interconnect with WireGuard and OSPF |
 | 2019 | TWNOG 4.0 | Next Generation IDC Network Solution Overview |
 | 2019 | OSC Tokyo Fall 2019 (Japan) | Build Redundant Gaming Network with WireGuard and BGP |
